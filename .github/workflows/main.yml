@@ -10,8 +10,26 @@ jobs:
      runs-on: ubuntu-latest
      
      steps:
-       - name: Download your code
+       - name: Download your code 📫 ⬇
          uses: actions/checkout@v2
 
-       - name: Say something
+       - name: Say something 🔔
          run: echo "hello world"
+         
+  hello-main:
+     runs-on: ubuntu-latest
+     
+     steps:
+       - name: Download your code 📫 ⬇
+         uses: actions/checkout@v2
+
+       - name: Verify develop branch
+         if: ${{ github.ref == 'refs/heads/develop' }}
+         run: echo "hello develop"
+
+       - name: Verify develop branch
+         if: ${{ github.ref == 'refs/heads/main' }}
+         run: echo "hello main"
+  
+   
+  
